@@ -5,8 +5,6 @@ public class Main {
     public static void main(String[] args) {
 
         MainFrame myWindow = new MainFrame();
-
-
     }
 }
 
@@ -16,16 +14,13 @@ class MainFrame extends JFrame {
         MainPanel panel = new MainPanel();
         this.add(panel);
 
-        this.setDefaultCloseOperation(3);
-        this.setVisible(true);
-
         PlayerPanel players = new PlayerPanel();
         this.add(players);
 
+        this.setDefaultCloseOperation(3);
+        this.setVisible(true);
 
-        /*TeamPanel teams = new TeamPanel();
-        teams.setVisible(false);
-        this.add(teams);*/
+
     }
 
     public void changePanel() {
@@ -35,46 +30,14 @@ class MainFrame extends JFrame {
 
 class MainPanel extends JPanel {
 
-    /*public MainPanel(){
-        this.setLayout(new BorderLayout());
-        JMenuBar myBar = new JMenuBar();
-        JMenu menuArchive = new JMenu("File");
-        JMenuItem itemSave = new JMenuItem("Save");
-        JMenuItem itemNew = new JMenuItem("New");
-        itemNew.setEnabled(false);
-        menuArchive.add(itemSave);
-        menuArchive.add(itemNew);
-
-        JMenu menuEdit = new JMenu("Edit");
-
-        JMenu menuView = new JMenu("Vista");
-        JMenuItem itemDark = new JMenuItem("Dark");
-        JMenu menuBackground = new JMenu("Background Color");
-        menuView.add(itemDark);
-        menuView.addSeparator();
-        menuView.add(menuBackground);
-        JMenuItem itemRed = new JMenuItem("Red");
-        JMenuItem itemBlue = new JMenuItem("Blue");
-        JMenuItem itemWhite = new JMenuItem("White");
-        itemRed.addActionListener((e)->setBackground(Color.RED));
-        itemBlue.addActionListener((e)->setBackground(Color.BLUE));
-        itemWhite.addActionListener((e)->setBackground(Color.WHITE));
-        itemDark.addActionListener((e)->setBackground(Color.DARK_GRAY));
-        menuBackground.add(itemBlue);
-        menuBackground.add(itemRed);
-        menuBackground.add(itemWhite);
-
-        myBar.add(menuArchive);
-        myBar.add(menuEdit);
-        myBar.add(menuView);
-
-        add(myBar, BorderLayout.NORTH);
-        //pack();
-    }*/
     public MainPanel() {
         setLayout(new BorderLayout());
 
         JPanel top = new JPanel(new FlowLayout());
+        JPanel menuBar = new JPanel(new BorderLayout());
+        MenuBar menu = new MenuBar();
+
+        menuBar.add(menu, BorderLayout.NORTH);
         JButton player = new JButton("Enter new player");
         JButton team = new JButton("Enter new team");
         JButton results = new JButton("Show results");
@@ -82,7 +45,8 @@ class MainPanel extends JPanel {
         top.add(team);
         top.add(results);
 
-        add(top, BorderLayout.NORTH);
+        add(menuBar, BorderLayout.NORTH);
+        add(top, BorderLayout.CENTER);
 
         //player.addActionListener(e ->);
 
@@ -112,4 +76,36 @@ class PlayerPanel extends JPanel {
 
 class TeamPanel extends JPanel {
 
+}
+
+class MenuBar extends JPanel {
+    public MenuBar() {
+        JMenuBar myBar = new JMenuBar();
+        JMenu menuFile = new JMenu("File");
+        JMenuItem itemSave = new JMenuItem("Save");
+        JMenuItem itemNew = new JMenuItem("New");
+        itemNew.setEnabled(false);
+        menuFile.add(itemSave);
+        menuFile.add(itemNew);
+
+        JMenu menuEdit = new JMenu("Edit");
+        JMenuItem editTeam = new JMenuItem("Team");
+        JMenuItem editPlayer = new JMenuItem("Player");
+        menuEdit.add(editTeam);
+        menuEdit.add(editPlayer);
+
+        JMenu menuView = new JMenu("View");
+        JMenuItem itemDark = new JMenuItem("Dark");
+        JMenuItem itemWhite = new JMenuItem("White");
+        itemDark.addActionListener((e)->setBackground(Color.DARK_GRAY));
+        itemWhite.addActionListener((e)->setBackground(Color.WHITE));
+        menuView.add(itemDark);
+        menuView.add(itemWhite);
+
+        myBar.add(menuFile);
+        myBar.add(menuEdit);
+        myBar.add(menuView);
+
+        add(myBar, BorderLayout.NORTH);
+    }
 }
