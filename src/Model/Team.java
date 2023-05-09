@@ -1,3 +1,5 @@
+package Model;
+
 public class Team {
 
     private String country, competition, trainer;
@@ -10,6 +12,6 @@ public class Team {
     }
 
     public String toString() {
-        return "Team [Country: " + country + "; Competition: " + competition + "; Trainer: " + trainer + "]";
+        return "Model.Team [Country: " + country + "; Competition: " + competition + "; Trainer: " + trainer + "]";
     }
 }

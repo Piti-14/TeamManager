@@ -1,3 +1,5 @@
+package Model;
+
 public class Player {
 
     private String name, position, club;
@@ -14,6 +16,6 @@ public class Player {
     }
 
     public String toString() {
-        return "Player [Name: " + name + "; Year: " + year + "; Height: " + height + "; Number: " + number + "; Position: " + position + "; Club: " + club + "]";
+        return "Model.Player [Name: " + name + "; Year: " + year + "; Height: " + height + "; Number: " + number + "; Position: " + position + "; Club: " + club + "]";
     }
 }
