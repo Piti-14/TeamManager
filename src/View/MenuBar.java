@@ -18,8 +18,8 @@ public class MenuBar extends JPanel {
 
         //Second menu button
         JMenu menuEdit = new JMenu("Edit");
-        JMenuItem editTeam = new JMenuItem("Model.Team");
-        JMenuItem editPlayer = new JMenuItem("Model.Player");
+        JMenuItem editTeam = new JMenuItem("Team");
+        JMenuItem editPlayer = new JMenuItem("Player");
         menuEdit.add(editTeam);
         menuEdit.add(editPlayer);
 

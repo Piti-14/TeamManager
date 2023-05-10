@@ -9,28 +9,3 @@ public class Main {
         MainFrame myWindow = new MainFrame();
     }
 }
-
-
-
-
-class PlayerPanel extends JPanel {
-    public PlayerPanel() {
-        JTextField position = new JTextField("Position: ");
-        add(position);
-
-        JTextField name = new JTextField("Name: ");
-        add(position);
-
-        JTextField year = new JTextField("Year: ");
-        add(position);
-
-        JTextField height = new JTextField("Height: ");
-        add(position);
-
-        JTextField number = new JTextField("Number: ");
-        add(position);
-
-        JTextField club = new JTextField("Club: ");
-        add(position);
-    }
-}
