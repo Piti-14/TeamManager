@@ -30,13 +30,17 @@ public class MainPanel extends JPanel {
         team.addActionListener(e -> MainPanelController.newActivePanel(newTeam));
 
         //Adding a controller
-        JPanel test = new JPanel();
         MainPanelController controller = new MainPanelController(this, initialPanel);
 
-        initialPanel.add(player);
-        initialPanel.add(team);
-        initialPanel.add(results);
-        add(initialPanel, BorderLayout.CENTER);
+        /*//Adding a controller for menu bar
+        MainPanelController menuBarController = new MainPanelController(menu, initialPanel);*/
 
+        JPanel buttons = new JPanel();
+        buttons.add(player);
+        buttons.add(team);
+        buttons.add(results);
+
+        initialPanel.add(buttons);
+        add(initialPanel, BorderLayout.CENTER);
     }
 }

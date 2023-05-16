@@ -5,7 +5,7 @@ import javax.swing.*;
 public class MainFrame extends JFrame {
 
     public MainFrame() {
-        setBounds(200, 200, 600, 600);
+        setBounds(200, 200, 300, 200);
 
         MainPanel principal = new MainPanel();
         add(principal);

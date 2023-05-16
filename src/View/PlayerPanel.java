@@ -4,6 +4,7 @@ import javax.swing.*;
 
 public class PlayerPanel extends JPanel {
     JTextField position, name, year, height, number, club;
+
     public PlayerPanel() {
         position = new JTextField("Position: ",10);
         name = new JTextField("Name: ", 15);
